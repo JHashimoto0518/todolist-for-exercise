@@ -8,14 +8,41 @@
     <div id="app">
         {{ message }}
     </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: 'Hello Vue!'
+            }
+        });
+    </script>
+
     <div id="app-2">
         <span v-bind:title="message">
             Hover your mouse to see my dynamically bound title!
         </span>
     </div>
+    <script>
+        var app2 = new Vue({
+            el: '#app-2',
+            data: {
+                message: 'You loaded this page on' + new Date().toLocaleString()
+            }
+        });
+    </script>
+
     <div id="app-3">
         <span v-if="seen">Now you see me</span>
     </div>
+    <script>
+        var app3 = new Vue({
+            el: '#app-3',
+            data: {
+                seen: true
+            }
+        })
+    </script>
+
     <div id="app-4">
         <ol>
             <li v-for="todo in todos">
@@ -24,27 +51,6 @@
         </ol>
     </div>
     <script>
-        var app = new Vue({
-            el: '#app',
-            data: {
-                message: 'Hello Vue!'
-            }
-        });
-
-        var app2 = new Vue({
-            el: '#app-2',
-            data: {
-                message: 'You loaded this page on' + new Date().toLocaleString()
-            }
-        });
-
-        var app3 = new Vue({
-            el: '#app-3',
-            data: {
-                seen: true
-            }
-        })
-
         var app4 = new Vue({
             el: '#app-4',
             data: {
