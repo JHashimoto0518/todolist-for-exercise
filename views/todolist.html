@@ -6,20 +6,18 @@
 </head>
 <body>
     <div id="tasklist">
-        <ol>
-            <li v-for="task in tasks">
-                {{ task.text }}
-            </li>
-        </ol>
+        <div v-for="task in tasks">
+            <input type="checkbox" id="{{ task.id }}" name="{{ task.text }}" value="{{ task.text }}">{{ task.text }}</input>
+        </div>
     </div>
     <script>
         var task = new Vue({
             el: '#tasklist',
             data: {
                 tasks: [
-                    { text: 'Learn JavaScript' },
-                    { text: 'Learn Vue' },
-                    { text: 'Build something awesome'}
+                    { id: 1, text: 'Learn JavaScript' },
+                    { id: 2, text: 'Learn Vue' },
+                    { id: 3, text: 'Build something awesome'}
                 ]
             }
         });
